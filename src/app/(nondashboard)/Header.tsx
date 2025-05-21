@@ -2,8 +2,21 @@
 
 import { CTAPrimaryButton } from "@/components/CTAPrimaryButton";
 import { GuideGrid } from "./GuideGrid";
+import { useRouter } from "next/navigation";
 
-export const Header = () => {
+interface Props {
+  isAuth: boolean;
+}
+export const Header = ({ isAuth }: Props) => {
+  const router = useRouter();
+
+  const handleStart = () => {
+    if (isAuth) {
+      router.push("/organizations");
+    } else {
+      router.push("/signin");
+    }
+  };
   return (
     <header className="mt-16 w-full xl:max-w-screen-lg mx-auto max-xl:px-5">
       <div className="flex flex-col gap-2 w-full items-center justify-center">
@@ -21,7 +34,7 @@ export const Header = () => {
       </div>
       <CTAPrimaryButton
         title="Get Started"
-        onClick={() => {}}
+        onClick={handleStart}
         classNames="w-[350px] sm:w-[450px] mx-auto mt-8"
       />
       <GuideGrid />

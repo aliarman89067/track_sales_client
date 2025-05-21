@@ -151,8 +151,8 @@ export const Navbar = () => {
         <div className="flex items-center justify-start gap-20">
           {/* Left Part */}
           <Link href="/" className="text-left">
-            <span className="font-jacquesFrancois font-semibold text-primaryGray text-2xl">
-              Logo
+            <span className="font-jacquesFrancois font-bold text-primaryGray text-2xl">
+              Track Sales
             </span>
           </Link>
           {/* Center Part */}

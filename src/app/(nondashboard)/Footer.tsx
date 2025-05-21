@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex-1 flex md:justify-center">
           <Link href="/" className="text-left">
             <span className="font-jacquesFrancois font-semibold text-primaryGray text-4xl">
-              Logo
+              Track Sales
             </span>
           </Link>
         </div>
