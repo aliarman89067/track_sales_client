@@ -62,8 +62,8 @@ export const api = createApi({
         // const userApiData = userApiResponse.data as {
         //   role: string
         // }
-        if (!userData) throw new Error("Endpoint is required");
         if (userApiResponse.error && userApiResponse.error.status === 404) {
+          if (!userData) throw new Error("Endpoint is required");
           userApiResponse = await createNewUser({
             userData: userData,
             fetchWithBQ,
