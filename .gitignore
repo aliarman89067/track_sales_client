@@ -1,0 +1,10 @@
+/node_modules
+.env
+.pnp
+.pnp.*
+.yarn/*
+/coverage
+/.next/
+.DS_Store
+.vercel
+.tsbuildinfo
