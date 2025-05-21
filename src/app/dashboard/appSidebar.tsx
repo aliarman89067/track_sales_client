@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/sidebar";
 import { NAVBAR_HEIGHT } from "@/constant/values";
 import { cn } from "@/lib/utils";
-import { ChevronLeft, X } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { Dispatch, SetStateAction } from "react";
 
 interface Props {

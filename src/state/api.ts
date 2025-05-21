@@ -58,13 +58,14 @@ export const api = createApi({
           };
         }
         if (!endpoint) throw new Error("Endpoint is required");
-        let userApiResponse = await fetchWithBQ(endpoint!!);
+        let userApiResponse = await fetchWithBQ(endpoint);
         // const userApiData = userApiResponse.data as {
         //   role: string
         // }
+        if (!userData) throw new Error("Endpoint is required");
         if (userApiResponse.error && userApiResponse.error.status === 404) {
           userApiResponse = await createNewUser({
-            userData: userData!!,
+            userData: userData,
             fetchWithBQ,
           });
         }
@@ -258,6 +259,7 @@ export const api = createApi({
       }),
       invalidatesTags: () => [{ type: "Agent" }],
     }),
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     deleteOrganization: build.mutation<any, { organizationId: string }>({
       query: ({ organizationId }) => ({
         url: `/organizations/delete/${organizationId}`,
